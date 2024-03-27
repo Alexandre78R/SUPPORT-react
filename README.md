@@ -1,7 +1,5 @@
 # Support React 
 
-
-
 ```js
 //les tableaux de données :
 

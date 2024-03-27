@@ -1,6 +1,6 @@
 import "./App.css";
-import Category from "./components/Category/Category";
-import Article from "./components/Article/Article";
+import Categories from "./components/Categories/Categories";
+import Articles from "./components/Articles/Articles";
 
 function App() {
   const categories = ["Fruit", "Vegetable"];
@@ -14,12 +14,12 @@ function App() {
 
   return (
     <>
-      <Category category={categories[0]} />
-      <Article article={articles[0]} />
-      <Article article={articles[1]} />
-      <Category category={categories[1]} />
-      <Article article={articles[2]} />
-      <Article article={articles[3]} />
+      <Categories category={categories[0]} />
+      <Articles article={articles[0]} />
+      <Articles article={articles[1]} />
+      <Categories category={categories[1]} />
+      <Articles article={articles[2]} />
+      <Articles article={articles[3]} />
     </>
   );
 }
