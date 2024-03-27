@@ -1,5 +1,4 @@
 function Category(props) {
-  // console.log(props.isVisibleCategoryFruit)
   const visibleCategory = () => {
     // Solution 1
     // if (props.state) {
