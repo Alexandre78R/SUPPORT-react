@@ -16,8 +16,6 @@ function App() {
   const [isVisibleCategoryVegetable, setIsVisibleCategoryVegetable] =
     useState(false);
 
-
-    
   return (
     <>
       <Categories
