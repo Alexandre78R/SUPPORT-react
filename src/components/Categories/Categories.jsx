@@ -1,4 +1,4 @@
-function Category(props) {
+function Categories(props) {
   return (
     <>
       <h1>{props.category}</h1>
@@ -6,4 +6,4 @@ function Category(props) {
   );
 }
 
-export default Category;
+export default Categories;
