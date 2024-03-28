@@ -14,7 +14,7 @@
  ```
 
 
-## Vous pouvez ajouter d'un pointer sur le nom de la categorie :
+## Vous pouvez ajouter un pointer sur le nom de la catégorie :
 
 ```css
 h1 {
