@@ -1,4 +1,5 @@
-function Article(props) {
+function Articles(props) {
+
   const { article } = props;
   return (
     <>
@@ -7,4 +8,4 @@ function Article(props) {
   );
 }
 
-export default Article;
+export default Articles;

@@ -1,4 +1,4 @@
-function Category(props) {
+function Categories(props) {
   const visibleCategory = () => {
     // Solution 1
     // if (props.stateVisibleCategory) {
@@ -17,4 +17,4 @@ function Category(props) {
   );
 }
 
-export default Category;
+export default Categories;
