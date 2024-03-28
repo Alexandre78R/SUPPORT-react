@@ -1,5 +1,4 @@
 function Articles(props) {
-
   const { article } = props;
   return (
     <>
