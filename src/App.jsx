@@ -30,9 +30,7 @@ function App() {
           <Articles article={articles[0]} />
           <Articles article={articles[1]} />
         </>
-      ) : (
-        ""
-      )}
+      ) : null}
 
       <Categories
         category={categories[1]}
