@@ -12,3 +12,12 @@
     { name: "Broccoli", category: "Vegetable" },
   ];
  ```
+
+
+## Vous pouvez ajouter d'un pointer sur le nom de la categorie :
+
+```css
+h1 {
+  cursor: pointer;
+}
+```
