@@ -1,13 +1,13 @@
 function Category(props) {
   const visibleCategory = () => {
     // Solution 1
-    // if (props.state) {
-    //   props.setState(false);
+    // if (props.stateVisibleCategory) {
+    //   props.setStateVisibleCategory(false);
     // } else {
-    //   props.setState(true);
+    //   props.setStateVisibleCategory(true);
     // }
     //Solution 2
-    props.setState(!props.state);
+    props.setStateVisibleCategory(!props.stateVisibleCategory);
   };
 
   return (

@@ -20,8 +20,8 @@ function App() {
     <>
       <Categories
         category={categories[0]}
-        state={isVisibleCategoryFruit}
-        setState={setIsVisibleCategoryFruit}
+        stateVisibleCategory={isVisibleCategoryFruit}
+        setStateVisibleCategory={setIsVisibleCategoryFruit}
       />
 
       {/* Solution 1 - condition ternaire*/}
@@ -34,8 +34,8 @@ function App() {
 
       <Categories
         category={categories[1]}
-        state={isVisibleCategoryVegetable}
-        setState={setIsVisibleCategoryVegetable}
+        stateVisibleCategory={isVisibleCategoryVegetable}
+        setStateVisibleCategory={setIsVisibleCategoryVegetable}
       />
 
       {/* Solution 2 - condition ternaire */}

@@ -1,20 +1,8 @@
 function Article(props) {
-  const { article, state, setState } = props;
-
-  const visibleArticle = () => {
-    // Solution 1
-    // if (state) {
-    //   setState(false);
-    // } else {
-    //   setState(true);
-    // }
-    //Solution 2
-    setState(!state);
-  };
-
+  const { article } = props;
   return (
     <>
-      <p onClick={visibleArticle}>{article.name}</p>
+      <p>{article.name}</p>
     </>
   );
 }
