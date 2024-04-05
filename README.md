@@ -1,8 +1,7 @@
 # Support React 
 ### Contexte de ce repositories 
 
-Ce dépôt GitHub est une ressource idéale pour les débutants en développement web qui souhaitent apprendre React.
-Basé sur des exemples de fruits et légumes, il couvre les concepts clés comme les composants, les props, l'état, et les hooks tels que useState.
+Ce dépôt GitHub est une ressource idéale pour les débutants en développement web qui souhaitent apprendre React. Basé sur des exemples de fruits et légumes, il couvre les concepts clés comme les composants, les props, l'état, et les hooks tels que useState. De plus, il utilise également des méthodes de manipulation de tableaux comme map et filter.
 C'est une ressource pratique pour renforcer ses compétences en React de manière ludique et pratique.
 
 ### Tableaux de données fictif 
