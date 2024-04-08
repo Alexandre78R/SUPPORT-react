@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Categories from "./components/Categories/Categories";
 import Articles from "./components/Articles/Articles";
@@ -11,15 +12,39 @@ function App() {
     { name: "Carrot", category: "Vegetable" },
     { name: "Broccoli", category: "Vegetable" },
   ];
+  const [isVisibleCategoryFruit, setIsVisibleCategoryFruit] = useState(false);
+  const [isVisibleCategoryVegetable, setIsVisibleCategoryVegetable] =
+    useState(false);
 
   return (
     <>
-      <Categories category={categories[0]} />
-      <Articles article={articles[0]} />
-      <Articles article={articles[1]} />
-      <Categories category={categories[1]} />
-      <Articles article={articles[2]} />
-      <Articles article={articles[3]} />
+      <Categories
+        category={categories[0]}
+        stateVisibleCategory={isVisibleCategoryFruit}
+        setStateVisibleCategory={setIsVisibleCategoryFruit}
+      />
+
+      {/* Solution 1 - condition ternaire*/}
+      {isVisibleCategoryFruit ? (
+        <>
+          <Articles article={articles[0]} />
+          <Articles article={articles[1]} />
+        </>
+      ) : null}
+
+      <Categories
+        category={categories[1]}
+        stateVisibleCategory={isVisibleCategoryVegetable}
+        setStateVisibleCategory={setIsVisibleCategoryVegetable}
+      />
+
+      {/* Solution 2 - condition ternaire */}
+      {isVisibleCategoryVegetable && (
+        <>
+          <Articles article={articles[2]} />
+          <Articles article={articles[3]} />
+        </>
+      )}
     </>
   );
 }
