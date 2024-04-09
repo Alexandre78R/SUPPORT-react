@@ -4,6 +4,7 @@
       { "name":"Vegetable"}
     ],
     "articles": [
+        { "name": "toto", "category": "Fruit" },
         { "name": "Apple", "category": "Fruit" },
         { "name": "Banana", "category": "Fruit" },
         { "name": "Orange", "category": "Fruit" },
