@@ -5,13 +5,17 @@ import FetchData from "./components/FetchData/FetchData";
 function App() {
   const [data, setData] = useState();
 
+  // const getData = () => {
+  //   const charNumber = prompt("Choose a number between 1 and 83");
+  //   axios.get(`https://swapi.dev/api/people/${charNumber}`).then((response) => {
+  //     setData(response.data);
+  //   });
+  // };
   const getData = () => {
-    const charNumber = prompt("Choose a number between 1 and 83");
-    axios.get(`https://swapi.dev/api/people/${charNumber}`).then((response) => {
+    axios.get(`https://swapi.dev/api/people/1`).then((response) => {
       setData(response.data);
     });
   };
-
   return (
     <div>
       {data && (
