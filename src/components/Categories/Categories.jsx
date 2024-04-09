@@ -2,6 +2,7 @@ import { useState } from "react";
 import Articles from "../Articles/Articles";
 
 function Categories(props) {
+  console.log("props", props)
   const [isVisibleCategory, setIsVisibleCategory] = useState(false);
 
   const visibleCategory = () => {
@@ -22,7 +23,7 @@ function Categories(props) {
 
   return (
     <>
-      <h1 onClick={visibleCategory}>{props.category}</h1>
+      <h1 onClick={visibleCategory}>{props.category.name}</h1>
       {isVisibleCategory && (
         <>
           {/* Solution 1 */}

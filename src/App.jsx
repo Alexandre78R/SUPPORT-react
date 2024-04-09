@@ -2,7 +2,10 @@ import "./App.css";
 import Categories from "./components/Categories/Categories";
 
 function App() {
-  const categories = ["Fruit", "Vegetable"];
+  const categories = [
+    { name: "Fruit"},
+    { name:"Vegetable"}
+  ];
 
   const articles = [
     { name: "Apple", category: "Fruit" },
@@ -42,7 +45,7 @@ function App() {
             key={index}
             category={category}
             articles={articles.filter(
-              (article) => category === article.category
+              (article) => category.name === article.category
             )}
           />
         );
