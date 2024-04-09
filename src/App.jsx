@@ -1,6 +1,6 @@
-import useState from "react";
+import { useState } from "react";
 import "./App.css";
-import Category from "./components/Categories/Categories";
+import Categories from "./components/Categories/Categories";
 
 function App() {
 
@@ -8,22 +8,22 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // State du tableau de données des catégories
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(null);
 
   // State du tableau de données des articles
-  const [articles, setArticles] = useState(null);
+  const [articles, setArticles] = useState([]);
 
   const handleClick = () => {
     // Obtenez les données via l'API en utilisant les liens suivants : http://localhost:3000
+    fetch("http://localhost:3000/articles")
+    .then(response => response.json())
+    .then(data => setArticles(data))
+    .catch(err => console.log(err))
+
     fetch("http://localhost:3000/categories")
+    .then(response => response.json())
     .then(data => setCategories(data))
     .catch(err => console.log(err))
-
-    fetch("/articles")
-    .then(response => response.json())
-    .then(data => setArticles([]))
-    .catch(err => console.log(err))
-
 
     setLoading(true)
   }
@@ -32,7 +32,9 @@ function App() {
     <>
       <button onClick={handleClick}>{loading ? "Mettre à jour les catégories" : "Voir les catégories"}</button>
       {
+        loading && (
           categories.map((category, index) => {
+            // Solution 1
             return (
               <Categories
                 key={index}
@@ -42,7 +44,12 @@ function App() {
                 )}
               />
             );
+            // Solution 2
+            // return (
+            //   <Categories key={index} category={category} articles={articles} />
+            // );
           })
+        )
       }
     </>
   );
