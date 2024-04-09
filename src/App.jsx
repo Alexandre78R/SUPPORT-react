@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FetchWeather from "./components/FetchWeather/FetchWeather";
+import FetchData from "./components/FetchData/FetchData";
 
 function App() {
-  const [weather, setWeather] = useState();
-  const getWeather = () => {
-    axios
-      .get(
-        "https://api.open-meteo.com/v1/meteofrance?latitude=52.52&longitude=13.41&hourly=temperature_2m"
-      )
-      .then((response) => {
-        setWeather(response.data);
-      });
+  const [data, setData] = useState();
+
+  const getData = () => {
+    const charNumber = prompt("Choose a number between 1 and 83");
+    axios.get(`https://swapi.dev/api/people/${charNumber}`).then((response) => {
+      setData(response.data);
+    });
   };
 
   return (
     <div>
-      {weather && (
-        <FetchWeather
-          latitude={weather.latitude}
-          longitude={weather.longitude}
-          timezone={weather.timezone}
-          hourly={weather.hourly}
+      {data && (
+        <FetchData
+          name={data.name}
+          height={data.height}
+          gender={data.gender}
+          films={data.films}
         />
       )}
-      <button type="button" onClick={getWeather}>
-        Get Weather
+      <button type="button" onClick={getData}>
+        Get data
       </button>
     </div>
   );
