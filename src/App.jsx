@@ -3,29 +3,27 @@ import axios from "axios";
 import FetchData from "./components/FetchData/FetchData";
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
 
-  // const getData = () => {
-  //   const charNumber = prompt("Choose a number between 1 and 83");
-  //   axios.get(`https://swapi.dev/api/people/${charNumber}`).then((response) => {
-  //     setData(response.data);
-  //   });
-  // };
   const getData = () => {
-    axios.get(`https://swapi.dev/api/people/1`).then((response) => {
-      setData(response.data);
+    axios.get(`https://swapi.dev/api/people`).then((response) => {
+      console.log(response.data.results);
+      setData(response.data.results);
     });
   };
   return (
     <div>
-      {data && (
-        <FetchData
-          name={data.name}
-          height={data.height}
-          gender={data.gender}
-          films={data.films}
-        />
-      )}
+      {data &&
+        data.map((perso) => {
+          return (
+            <FetchData
+              name={perso.name}
+              height={perso.height}
+              gender={perso.gender}
+              films={perso.films}
+            />
+          );
+        })}
       <button type="button" onClick={getData}>
         Get data
       </button>
