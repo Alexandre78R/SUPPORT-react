@@ -1,58 +1,33 @@
-import "./App.css";
-import Categories from "./components/Categories/Categories";
+import React, { useState } from "react";
+import axios from "axios";
+import FetchWeather from "./components/FetchWeather/FetchWeather";
 
 function App() {
-  const categories = ["Fruit", "Vegetable"];
-
-  const articles = [
-    { name: "Apple", category: "Fruit" },
-    { name: "Banana", category: "Fruit" },
-    { name: "Orange", category: "Fruit" },
-    { name: "Strawberry", category: "Fruit" },
-    { name: "Grapes", category: "Fruit" },
-    { name: "Watermelon", category: "Fruit" },
-    { name: "Pineapple", category: "Fruit" },
-    { name: "Kiwi", category: "Fruit" },
-    { name: "Mango", category: "Fruit" },
-    { name: "Peach", category: "Fruit" },
-    { name: "Pear", category: "Fruit" },
-    { name: "Plum", category: "Fruit" },
-    { name: "Cherry", category: "Fruit" },
-    { name: "Carrot", category: "Vegetable" },
-    { name: "Broccoli", category: "Vegetable" },
-    { name: "Tomato", category: "Vegetable" },
-    { name: "Lettuce", category: "Vegetable" },
-    { name: "Cucumber", category: "Vegetable" },
-    { name: "Potato", category: "Vegetable" },
-    { name: "Onion", category: "Vegetable" },
-    { name: "Garlic", category: "Vegetable" },
-    { name: "Bell pepper", category: "Vegetable" },
-    { name: "Spinach", category: "Vegetable" },
-    { name: "Zucchini", category: "Vegetable" },
-    { name: "Eggplant", category: "Vegetable" },
-    { name: "Cauliflower", category: "Vegetable" },
-  ];
+  const [weather, setWeather] = useState();
+  const getWeather = () => {
+    axios
+      .get(
+        "https://api.open-meteo.com/v1/meteofrance?latitude=52.52&longitude=13.41&hourly=temperature_2m"
+      )
+      .then((response) => {
+        setWeather(response.data);
+      });
+  };
 
   return (
-    <>
-      {categories.map((category, index) => {
-        // Solution 1
-        return (
-          <Categories
-            key={index}
-            category={category}
-            articles={articles.filter(
-              (article) => category === article.category
-            )}
-          />
-        );
-        // Solution 2
-        // return (
-        //   <Categories key={index} category={category} articles={articles} />
-        // );
-      })}
-    </>
+    <div>
+      {weather && (
+        <FetchWeather
+          latitude={weather.latitude}
+          longitude={weather.longitude}
+          timezone={weather.timezone}
+          hourly={weather.hourly}
+        />
+      )}
+      <button type="button" onClick={getWeather}>
+        Get Weather
+      </button>
+    </div>
   );
 }
-
 export default App;
