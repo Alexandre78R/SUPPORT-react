@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // State du tableau de données des catégories
-  const [categories, setCategories] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   // State du tableau de données des articles
   const [articles, setArticles] = useState([]);
