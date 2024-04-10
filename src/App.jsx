@@ -32,24 +32,22 @@ function App() {
     <>
       <button onClick={handleClick}>{loading ? "Mettre à jour les catégories" : "Voir les catégories"}</button>
       {
-        loading && (
-          categories.map((category, index) => {
-            // Solution 1
-            return (
-              <Categories
-                key={index}
-                category={category}
-                articles={articles.filter(
-                  (article) => category.name === article.category
-                )}
-              />
-            );
-            // Solution 2
-            // return (
-            //   <Categories key={index} category={category} articles={articles} />
-            // );
-          })
-        )
+        categories.map((category, index) => {
+          // Solution 1
+          return (
+            <Categories
+              key={index}
+              category={category}
+              articles={articles.filter(
+                (article) => category.name === article.category
+              )}
+            />
+          );
+          // Solution 2
+          // return (
+          //   <Categories key={index} category={category} articles={articles} />
+          // );
+        })
       }
     </>
   );
