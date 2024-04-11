@@ -7,7 +7,6 @@ function App() {
 
   const getData = () => {};
 
-
   return (
     <div>
       <button type="button" onClick={getData}>
