@@ -5,13 +5,28 @@ import FetchData from "./components/FetchData/FetchData";
 function App() {
   const [data, setData] = useState(null);
 
-  // url to fetch (with axios or "classic" fetch, as you wish): `https://swapi.dev/api/people`
+  // Solution 1
+  // function getData() {
+  //   fetch(`https://swapi.dev/api/people`)
+  //     .then((response) => response.json())
+  //     .then((data) => setData(data.results))
+  //     .catch((err) => console.error(err));
+  // }
+
+  // Solution 2
+  const getData = () => {
+    axios.get(`https://swapi.dev/api/people`).then((response) => {
+      setData(response.data.results);
+    });
+  };
+
+  // url to fetch (with or without axios, as you wish): `https://swapi.dev/api/people`
 
   // data to get and to send via props: name, heigth, gender in priority, and films if you want to try
 
-  // Component FetchData to create to display the value of the props - don't forget to import the Component in App.jsx
+  // Component FetchData to create to receive and display the props - don't forget to import the Component in App.jsx
 
-  // In App.jsx, make sure that data exist, and get it with the button "get data"
+  // In App.jsx, get data with the button - make sure that data exist before mapping !
 
   return (
     <div>
