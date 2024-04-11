@@ -1,5 +1,5 @@
 import React from "react";
 
-function FetchData(props) {}
+function FetchData() {}
 
 export default FetchData;
