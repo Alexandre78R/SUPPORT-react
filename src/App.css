@@ -18,6 +18,18 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+#buttonArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonArea button {
+  background-color: lightgrey;
+  width: 20rem;
+  height: 10rem;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

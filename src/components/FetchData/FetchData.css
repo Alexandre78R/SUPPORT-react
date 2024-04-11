@@ -1,0 +1,30 @@
+#persoCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.persoCard {
+  background-color: rgb(247, 243, 243);
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 1rem;
+  width: 20rem;
+  height: 17rem;
+  margin: 0.5rem;
+}
+
+.persoCard h1 {
+  font-size: 1.5rem;
+}
+
+.persoCard p {
+  font-size: 1rem;
+}
+
+.persoCard ul li {
+  list-style: none;
+  position: relative;
+  left: -12px;
+}

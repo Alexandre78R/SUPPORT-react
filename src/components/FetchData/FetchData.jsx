@@ -1,22 +1,26 @@
 import React from "react";
+import "./FetchData.css";
 
-function FetchData(props) {
-  const { name, height, gender, films } = props;
+function FetchData({ data }) {
   return (
-    <div>
-      <p>{name}</p>
-      <p>{height}</p>
-      <p>{gender}</p>
-      <ul>
-        {films.map((film) => (
-          <li key={film}>
-            <a target="_blank" href={film}>
-              {film}
-            </a>
-          </li>
+    <>
+      <div id="persoCards">
+        {data.map((perso, index) => (
+          <section class="persoCard" key={index}>
+            <h1>{perso.name}</h1>
+            <p>{perso.height}</p>
+            <ul>
+              {perso.films.map((film, index) => (
+                <a href={film} target="_blank">
+                  <li key={index}>{film}</li>
+                </a>
+              ))}
+            </ul>
+          </section>
         ))}
-      </ul>
-    </div>
+        ;
+      </div>
+    </>
   );
 }
 

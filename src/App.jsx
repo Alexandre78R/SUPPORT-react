@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FetchData from "./components/FetchData/FetchData";
+import "./App.css";
 
 function App() {
   const [data, setData] = useState(null);
@@ -21,23 +22,17 @@ function App() {
   };
 
   return (
-    <div>
-      {data &&
-        data.map((perso, index) => {
-          return (
-            <FetchData
-              key={index}
-              name={perso.name}
-              height={perso.height}
-              gender={perso.gender}
-              films={perso.films}
-            />
-          );
-        })}
-      <button type="button" onClick={getData}>
-        Get data
-      </button>
-    </div>
+    <>
+      {data ? (
+        <FetchData data={data} />
+      ) : (
+        <div id="buttonArea">
+          <button type="button" onClick={getData}>
+            Get data
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 export default App;
