@@ -18,6 +18,13 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.persoCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
 #buttonArea {
   display: flex;
   justify-content: center;
